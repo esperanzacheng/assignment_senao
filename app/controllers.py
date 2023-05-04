@@ -107,5 +107,3 @@ class user_controller():
         # handle error if failed_count_result, validation or result index goes wrong
         except IndexError as e:
             return {"success": False, "reason": str(e)}
-
-

@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, jsonify
 from app.blueprint import user_blueprint
 
 app=Flask(__name__)
@@ -16,4 +16,4 @@ def method_not_allowed(e):
     return (jsonify(success = False, reason=str(e)), 405)
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 3000, debug = True)
+    app.run(host = "0.0.0.0", port = 8000, debug = True)
