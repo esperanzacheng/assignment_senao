@@ -8,7 +8,8 @@ Two RESTful HTTP APIs for creating(POST) and verifying(PUT) an account and passw
 
 <span id="api-document"></span>
 ## API Document
-* [SwaggerHub](https://app.swaggerhub.com/apis-docs/esperanzacheng1117/assignment_senao/1.0#/user/post_api_user)
+* [SwaggerHub](https://app.swaggerhub.com/apis-docs/esperanzacheng1117/assignment_senao/1.0#/)
+
 * After running on your machine, use **port 8000** for testing
 ```
 http://127.0.0.1:8000/api/user
