@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    image: esperanzacheng/senao-arm
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - pool_name=${pool_name}
+      - db_host=${db_host}
+      - db_user=${db_user}
+      - db_password=${db_password}
+      - db_name=${db_name}
