@@ -22,10 +22,10 @@ def user_signup():
     except Exception as e:
         return (jsonify(success = False, reason = str(e)), 500)
 
-@user_blueprint.route('/api/user', methods=["GET"])
+@user_blueprint.route('/api/user', methods=["PUT"])
 def user_login():
     try:
-        result = User.get_user()
+        result = User.put_user()
         if result["success"]:
             return (jsonify(success = True), 200)
         elif ((result["reason"] == "Password is wrong") or 
@@ -34,7 +34,7 @@ def user_login():
         elif (result["reason"] == "Missing username or password input"):
             return (jsonify(success = False, reason = result["reason"]), 400)
         elif (result["reason"] == "Too many failed attempts"):
-            response = make_response(jsonify(success = False, reason = "Too many failed attempts"), 429)
+            response = make_response(jsonify(success = False, reason = "Too many failed attempts. Please wait for 1 min to try again"), 429)
             response.headers['Retry-After'] = result["time"]
             return response
         else:

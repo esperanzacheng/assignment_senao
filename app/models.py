@@ -22,7 +22,7 @@ class User():
             # handle MySQL error
             return {"success": False, "reason": str(e)}
         
-    def get(username):
+    def put(username):
         try:
             # get cursor from connection pool
             with connection_pool.get_connection() as connection_object, connection_object.cursor() as my_cursor:

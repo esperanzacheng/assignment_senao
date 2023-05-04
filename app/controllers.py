@@ -69,14 +69,14 @@ class user_controller():
         except IndexError as e:
             return {"overload": False}
     
-    def get_user(self):
+    def put_user(self):
         try:
             username = request.json["username"]
             password = request.json["password"]
             validation = self._input_validation(username, password)
             # check if the input is validated. If not, save the time to select in db
             if validation["success"]:
-                result = User.get(username)
+                result = User.put(username)
                 # check if this username exist
                 if result["success"]:
                     hashed_password = result["data"]["password"] # un-hash the password

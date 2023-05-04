@@ -1,11 +1,13 @@
 from flask import Flask, jsonify
 from app.blueprint import user_blueprint
+from flask_cors import CORS
 
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
 app.config['JSON_SORT_KEYS']=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.register_blueprint(user_blueprint)
+CORS(app)
 
 @app.errorhandler(404)
 def resource_not_found(e):
