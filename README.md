@@ -34,4 +34,4 @@ docker compose up
 
 <span id="demo-route"></span>
 ## Demo Route
-http://34.202.229.227/api/user
+http://3.87.92.73//api/user
